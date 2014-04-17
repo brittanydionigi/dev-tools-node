@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Designing && Debugging with DevTools</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+      <header>
+        <h1>Designing && Debugging with DevTools</h1>
+        <h2>Startup Institute New York, December 2013 <span class="author">// <a href="http://twitter.com/brittanystoroz">Brittany Storoz</a></span></h2>
+      </header>
+      <div id="wrapper">
+        <nav id="practice">
+          <ol id="practice-sections">
+            <li class="active"><h4>Part One // <span class="practice-title">The DOM: Elements & Styles</h4></span>
+              <ol class="steps">
+                <li>Enable autosaving by adding your local folder to your Chrome Dev Tools workspace.</li>
+                <li>Put the form fields in order based on the quantity of each item being ordered.</li>
+                <li>Let's remove the flip flops node from the order form, since nobody wants to wear flip flops in the winter time.</li>
+                <li>Make sure users know they are about to click the submit button by adding a hover state that changes the background color, the cursor to a hand (cursor: pointer) and darkens the border.</li>
+                <li>Create a new CSS rule for a selected element</li>
+                <li>Left-align the text that specifies the color choices for hats and coats being ordered.</li>
+              </ol>
+            </li>
+            <li><h4>Part Two // <span class="practice-title">Debugging JavaScript</h4></span>
+              <ol class="steps">
+                <li>It seems like nothing happens when we click the submit button. Let's investigate why.</li>
+                <li>We've now verified that our submit function is being called, but it still seems like the order is not going through. Check the console for errors.</li>
+                <li>Investigate the stack trace for the error. Using the sources tab, let's set a breakpoint where the error is occurring and take a look around.</li>
+                <li>What is data type of the value we are trying to push to? Let's correct it our .push() method works.</li>
+              </ol>
+            </li>
+            <li><h4>Part Three // <span class="practice-title">Inspecting Network Requests</h4></span>
+              <ol class="steps">
+                <li>Now that we've fixed our data type so our order form gets sent, let's navigate to the network tab and watch for our request to be sent.</li>
+                <li>We are hoping for a Status Code of 200, OK. Unfortunately, this isn't what we get. Click on the request and review the data that was sent, as well as the response we received.</li>
+                <li>Once we understand what caused the error, let's adjust our request body so we can get that 200 OK status.</li>
+                <li>When we eventually reach a thank you page that confirms our submission, let's toggle the 'preserve log' option in the network tab so we can double check everything went smoothly on the server side.</li>
+              </ol>
+            </li>
+          </ol>
+        </nav>
+        <div id="workspace">
+          <form id="order-form">
+            <h3>Review Your Order:</h3>
+            <div class="field">
+              <input type="text" name="hats" readonly value="8" data-multiple-styles="true"></input><label for="hats">Hats</label>
+              <div class="style-info">
+                <input type="text" name="red" readonly value="4"></input><label for="red">red</label>
+                <input type="text" name="yellow" readonly value="4"></input><label for="yellow">yellow</label>
+              </div>
+            </div>
+            <div class="field">
+              <input type="text" name="coats" readonly value="6" data-multiple-styles="true"></input><label for="hats">Coats</label>
+              <div class="style-info">
+                <input type="text" name="black" readonly value="2"></input><label for="black">black</label>
+                <input type="text" name="pink" readonly value="3"></input><label for="pink">pink</label>
+                <input type="text" name="green" readonly value="1"></input><label for="green">green</label>
+              </div>
+            </div>
+            <div class="field">
+              <input type="text" name="hotcocoa" readonly value="1"></input><label for="hotcocoa">Hot Cocoa</label>
+            </div>
+            <div class="field">
+              <input type="text" name="flipflops" readonly value="0"></input><label for="flipflops">Flip flops</label>
+            </div>
+            <div class="field last">
+              <input type="hidden" name="user" value="startupInstitueStudent" />
+            </div>
+            <p id="submit">Submit</p>
+          </form>
+        </div>
+      </div>
+
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
